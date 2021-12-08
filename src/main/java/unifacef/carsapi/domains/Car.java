@@ -1,13 +1,21 @@
 package unifacef.carsapi.domains;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class Car {
+@Document(value = "cars")
+public class Car implements Serializable {	
 	
+	private static final long serialVersionUID = 1L;
+	@Id
 	private Long id;
 	private String brand;
 	private String model;
