@@ -1,5 +1,7 @@
 package unifacef.carsapi.domains;
 
+import java.time.LocalDateTime;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,8 +18,7 @@ public class Car {
 	private String typeCar;
 	private String tankStatus;
 	private String availability;
-	
-	
-	
+	private LocalDateTime createdDate;
+	private LocalDateTime lastModifieldDate;	
 
 }
