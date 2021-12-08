@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfigurations {
 	
-	private static final String BASE_PACKAGE = "unifacef.carapi.gateways.inputs.http";
+	private static final String BASE_PACKAGE = "unifacef.carsapi.gateways.inputs.http";
 	
 	
 	@Bean

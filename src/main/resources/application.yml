@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: Car-Api
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/car-api
+integration:
+  store:
+    url:  http://localhost:8084
+
