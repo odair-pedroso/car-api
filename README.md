@@ -26,6 +26,13 @@ Microsserviço responsável pelo CRUD de clientes via HTTP, por persistir no mon
 
 Microsserviço responsável por agregar os dados oriundos dos microsserviços de entrada.
 
+# Arquitetura utilizada na solução:
+
+Hexagonal
+
+![image](https://user-images.githubusercontent.com/64381101/145391252-c6f74a82-2a81-4ef0-9aa2-8ba86a38cd75.png)
+
+
 # Contratos da api de carro:
 
 POST/api/V1/cars
