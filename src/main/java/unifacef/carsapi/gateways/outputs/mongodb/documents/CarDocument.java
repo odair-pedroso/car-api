@@ -19,6 +19,7 @@ public class CarDocument {
 	
 	@Id
 	private String id;
+	private String board;
 	private String brand;
 	private String model;
 	private String color;
@@ -32,7 +33,8 @@ public class CarDocument {
 	
 	
 	public CarDocument(final Car car) {
-		this.id = car.getBoard();
+		this.id = car.getId();
+		this.board = car.getBoard();
 		this.brand = car.getBrand();
 		this.model = car.getModel();
 		this.color = car.getColor();
@@ -48,7 +50,8 @@ public class CarDocument {
 	
 	public Car toDomain() {
 		return Car.builder()
-			.board(this.id)
+			.id(this.id)	
+			.board(this.board)
 			.brand(this.brand)
 			.model(this.model)
 			.color(this.color)

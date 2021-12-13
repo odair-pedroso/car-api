@@ -30,14 +30,21 @@ public class CarDataGatewayMongoImpl implements CarDataGateway {
 
 
 
-	@Override
-	public Optional<Car> findByBoard(final String board) {		
-		return carRepository.findById(board).map(CarDocument::toDomain);
-	}
+	
 	
 	@Override
 	public Page<Car> findByPage(final Pageable pageable) {		
 		return carRepository.findAll(pageable).map(CarDocument::toDomain);
+	}
+
+
+
+
+
+	@Override
+	public Optional<Car> findByBoard(String board) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

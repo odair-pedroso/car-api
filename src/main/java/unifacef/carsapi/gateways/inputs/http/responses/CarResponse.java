@@ -15,36 +15,40 @@ public class CarResponse implements Serializable {
 	private static final long serialVersionUID = 7720638133263136151L;
 	
 	@ApiModelProperty(position=0)
-	private String board;
+	private String id;
 	
 	@ApiModelProperty(position=1)
-	private String brand;
+	private String board;
 	
 	@ApiModelProperty(position=2)
-	private String model;
+	private String brand;
 	
 	@ApiModelProperty(position=3)
-	private String color;
+	private String model;
 	
 	@ApiModelProperty(position=4)
-	private String year;
+	private String color;
 	
 	@ApiModelProperty(position=5)
-	private TypeCar typeCar;
+	private String year;
 	
 	@ApiModelProperty(position=6)
-	private TankStatus tankStatus;
+	private TypeCar typeCar;
 	
 	@ApiModelProperty(position=7)
-	private Boolean availability;
+	private TankStatus tankStatus;
 	
 	@ApiModelProperty(position=8)
-	private LocalDateTime createDate;
+	private Boolean availability;
 	
 	@ApiModelProperty(position=9)
+	private LocalDateTime createDate;
+	
+	@ApiModelProperty(position=10)
 	private LocalDateTime lastModifiedDate;
 	
 	public CarResponse(final Car car) {
+		this.id = car.getId();
 		this.board = car.getBoard();
 		this.brand = car.getBrand();
 		this.model = car.getModel();

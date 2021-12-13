@@ -11,6 +11,7 @@ import lombok.Data;
 @Builder
 public class Car  {
 	
+	private String id;
 	private String board;
 	private String brand;
 	private String model;
