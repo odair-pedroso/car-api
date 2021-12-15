@@ -18,8 +18,7 @@ import unifacef.carsapi.domains.TypeCar;
 public class CarDocument {
 	
 	@Id
-	private String id;
-	private String board;
+	private String id;	
 	private String brand;
 	private String model;
 	private String color;
@@ -33,8 +32,7 @@ public class CarDocument {
 	
 	
 	public CarDocument(final Car car) {
-		this.id = car.getId();
-		this.board = car.getBoard();
+		this.id = car.getBoard();		
 		this.brand = car.getBrand();
 		this.model = car.getModel();
 		this.color = car.getColor();
@@ -49,9 +47,8 @@ public class CarDocument {
 	}
 	
 	public Car toDomain() {
-		return Car.builder()
-			.id(this.id)	
-			.board(this.board)
+		return Car.builder()			
+			.board(this.id)
 			.brand(this.brand)
 			.model(this.model)
 			.color(this.color)
