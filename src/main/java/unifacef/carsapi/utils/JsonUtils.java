@@ -46,7 +46,6 @@ public class JsonUtils {
 	    } catch (Exception ex) {
 	      throw new RuntimeException(ERROR_TO_CONVERT_OBJECT_TO_JSON, ex);
 	    }
-	  }
-	
+	  }	
 
 }
