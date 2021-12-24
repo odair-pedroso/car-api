@@ -28,7 +28,6 @@ public class CustomExceptionHandler {
 		responseHeaders.add(CONTENT_TYPE,APPLICATION_JSON_CHARSET_UTF_8);		
 		return new ResponseEntity<>(createMessage(ex),responseHeaders,HttpStatus.NOT_FOUND);		
 		
-		
 	}
 	
 	
