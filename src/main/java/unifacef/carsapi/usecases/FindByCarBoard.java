@@ -18,7 +18,7 @@ public class FindByCarBoard {
 	private final MessageUtils messageUtils;
 	
 	public Car execute(final String board) {
-		log.info("Find board. Car board: {}",board);
+		log.info("Find board. Car board: {}", board);
 		return carDataGateway.findByBoard(board).orElseThrow(
 			() -> new NotFoundException(messageUtils.getMessage(CAR_NOT_FOUND, board)));		
 		
