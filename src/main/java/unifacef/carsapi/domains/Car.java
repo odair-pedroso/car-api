@@ -9,8 +9,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Car  {
-	
+public class Car  {	
 	
 	private String board;
 	private String brand;

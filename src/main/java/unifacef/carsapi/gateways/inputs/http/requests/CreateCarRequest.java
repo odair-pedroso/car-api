@@ -1,10 +1,35 @@
 package unifacef.carsapi.gateways.inputs.http.requests;
 
-public class CreateCarRequest {
+import javax.validation.constraints.NotNull;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import unifacef.carsapi.domains.Car;
+
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class CreateCarRequest extends CarRequest {
+	
+	private static final long serialVersionUID = -6349644718099330841L;
+	
+	@NotNull(message = "{required.field}")
+	private String board;
+	
+	
+	public Car toDomain() {
+		return Car.builder()
+			.board(this.board)	
+			.brand(super.getBrand())
+			.model(super.getModel())
+			.color(super.getColor())
+			.year(super.getYear())
+			.typeCar(super.getTypeCar())
+			.tankStatus(super.getTankStatus())	
+			.availability(super.getAvailability())	
+			.build();		
+		
+		}
 
 	}
 
-}
+
