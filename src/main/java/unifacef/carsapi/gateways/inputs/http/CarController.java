@@ -5,6 +5,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,10 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import unifacef.carsapi.domains.Car;
+import unifacef.carsapi.gateways.inputs.http.requests.UpdateCarRequest;
 import unifacef.carsapi.gateways.inputs.http.responses.CarResponse;
 import unifacef.carsapi.gateways.inputs.http.responses.ListResponse;
 import unifacef.carsapi.usecases.FindByCarBoard;
 import unifacef.carsapi.usecases.FindCars;
+import unifacef.carsapi.usecases.UpdateCar;
 
 @Slf4j
 @Validated
@@ -27,6 +31,8 @@ public class CarController {
 	
 	private final FindCars findCars;
 	private final FindByCarBoard findByCarBoard;
+	private final UpdateCar updateCar;
+	
 	
 	@GetMapping
 	public ListResponse<CarResponse> findByPage (@RequestParam(defaultValue = "0") final Integer page,
@@ -40,6 +46,15 @@ public class CarController {
 	public CarResponse find (@PathVariable final String board) {
 		Car car = findByCarBoard.execute(board);
 		return new CarResponse(car);
+		
+	}
+	
+	@PutMapping(path = "/{board}")
+	public CarResponse update (@PathVariable String board,@RequestBody @Validated UpdateCarRequest request) {
+		Car car = updateCar.execute(request.toDomain(board));
+		return new CarResponse(car);
+		
+		
 		
 	}
 
