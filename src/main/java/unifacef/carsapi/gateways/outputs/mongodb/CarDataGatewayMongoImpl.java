@@ -27,9 +27,6 @@ public class CarDataGatewayMongoImpl implements CarDataGateway {
 		}
 		return carRepository.save(new CarDocument(car)).toDomain();
 	}
-
-
-
 	
 	
 	@Override
@@ -38,13 +35,9 @@ public class CarDataGatewayMongoImpl implements CarDataGateway {
 	}
 
 
-
-
-
 	@Override
-	public Optional<Car> findByBoard(String board) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Car> findByBoard(final String board) {		
+		return carRepository.findById(board).map(CarDocument::toDomain) ;
 	}
 
 
