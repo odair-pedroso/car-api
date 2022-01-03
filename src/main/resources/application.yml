@@ -7,6 +7,6 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/car-api
 integration:
-  store:
+  location:
     url:  http://localhost:8084
 
