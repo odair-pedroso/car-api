@@ -2,10 +2,12 @@ package unifacef.carsapi.gateways.outputs;
 
 import java.util.Optional;
 
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import unifacef.carsapi.domains.Car;
+
 
 public interface CarDataGateway {
 	
