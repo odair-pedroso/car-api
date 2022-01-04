@@ -7,7 +7,9 @@ Criação de serviços que permitam cadastro de Carro/Preço/Clientes em micross
 # A solução
 
 
-![image](https://user-images.githubusercontent.com/64381101/145072685-910cfbd6-2e5e-4855-a475-95f5a1b7bce5.png)
+
+![PosFacef_API_Locadora-microsserviços drawio (2)-microsserviços drawio](https://user-images.githubusercontent.com/64381101/148108906-9786a8c2-7470-447d-8b67-c461020b0d75.png)
+
 
 
 # Car-API: 
@@ -18,11 +20,11 @@ Microsserviço responsável pelo CRUD de carros via HTTP, por persistir no mongo
 
 Microsserviço responsável pelo CRUD de preços via HTTP, por persistir no mongo e enviar para a Location-API.
 
-# Client-API:
+# Customers-API:
 
 Microsserviço responsável pelo CRUD de clientes via HTTP, por persistir no mongo e enviar para a Location-API.
 
-# Location-API:
+# Rental-API:
 
 Microsserviço responsável por agregar os dados oriundos dos microsserviços de entrada.
 
