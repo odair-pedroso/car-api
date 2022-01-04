@@ -10,7 +10,7 @@ import unifacef.carsapi.configurations.ff4j.Features;
 import unifacef.carsapi.domains.Car;
 import unifacef.carsapi.exceptions.NotFoundException;
 import unifacef.carsapi.gateways.outputs.CarDataGateway;
-import unifacef.carsapi.gateways.outputs.LocationGateway;
+import unifacef.carsapi.gateways.outputs.RentalGateway;
 import unifacef.carsapi.utils.MessageUtils;
 
 @Slf4j
@@ -19,7 +19,7 @@ import unifacef.carsapi.utils.MessageUtils;
 public class UpdateCar {
 	
 	private final CarDataGateway carDataGateway;
-	private final LocationGateway locationGateway;
+	private final RentalGateway rentalGateway;
 	private final MessageUtils messageUtils;
 	private final FF4j ff4j;
 	
@@ -32,7 +32,7 @@ public class UpdateCar {
 		
 		Car saved = carDataGateway.save(car);
 		if(ff4j.check(Features.SEND_TO_LOCATION.getKey())) {
-		  locationGateway.send(saved);
+		  rentalGateway.send(saved);
 		}		
 		return saved;		
 	}
